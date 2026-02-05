@@ -5,20 +5,46 @@ import Button from '@/components/Button'
 
 export default function Contact() {
     const [submitted, setSubmitted] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true)
+        setError('')
+
         const formData = new FormData(e.target)
-        const name = formData.get('name')
-        const email = formData.get('email')
-        const message = formData.get('message')
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        }
 
-        const subject = encodeURIComponent(`AshBots Inquiry from ${name}`)
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
 
-        window.location.href = `mailto:ayman@ashbots.com?subject=${subject}&body=${body}`
+            const result = await response.json()
 
-        setSubmitted(true)
+            if (response.ok) {
+                setSubmitted(true)
+            } else {
+                // Handle both string errors and object errors from the API
+                const errorMessage = typeof result.error === 'object'
+                    ? result.error.message || 'Something went wrong'
+                    : result.error || 'Something went wrong'
+                setError(errorMessage)
+            }
+        } catch (err) {
+            setError('Failed to send message. Please check your connection or email us directly.')
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -30,7 +56,7 @@ export default function Contact() {
                         Contact <br />
                         <span className="text-ashbots-blue italic opacity-90">AshBots</span>
                     </h1>
-                    <p className="text-xl font-light text-slate-500 leading-loose">
+                    <p className="text-xl font-light text-slate-700 leading-loose">
                         Have a question or want to see if Ashbots is a good fit for your business?
                     </p>
                 </div>
@@ -44,7 +70,7 @@ export default function Contact() {
                             <h2 className="text-2xl font-display text-slate-800 leading-relaxed">
                                 The best way to get started is by using the chatbot on this website or checking out the demos on the pricing page.
                             </h2>
-                            <p className="text-sm font-light text-slate-500 leading-loose">
+                            <p className="text-sm font-light text-slate-600 leading-loose">
                                 You can book a free, no-pressure meeting directly through the chat after testing the product yourself.
                             </p>
                         </div>
@@ -53,10 +79,10 @@ export default function Contact() {
                             <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
                             <div className="relative z-10 space-y-6">
                                 <h4 className="text-[10px] uppercase tracking-[0.2em] text-ashbots-blue font-bold">Direct Inquiries</h4>
-                                <p className="text-lg font-light text-slate-600 border-b border-slate-100 pb-6">
+                                <p className="text-lg font-light text-slate-700 border-b border-slate-100 pb-6">
                                     ayman@ashbots.com
                                 </p>
-                                <p className="text-xs font-light text-slate-400">
+                                <p className="text-xs font-light text-slate-500">
                                     If you&apos;d rather skip the demos and contact us directly, feel free to reach out via email.
                                 </p>
                             </div>
@@ -78,22 +104,27 @@ export default function Contact() {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-12">
-                                <div className="space-y-2 border-b border-slate-100 pb-4">
-                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">Your Name *</label>
+                                {error && (
+                                    <div className="p-4 bg-red-50 text-red-600 text-xs rounded-xl border border-red-100 animate-fade-in">
+                                        {error}
+                                    </div>
+                                )}
+                                <div className="space-y-2 border-b border-slate-100 pb-4 focus-within:border-ashbots-blue transition-colors">
+                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">Your Name *</label>
                                     <input type="text" name="name" placeholder="Full name" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
                                 </div>
-                                <div className="space-y-2 border-b border-slate-100 pb-4">
-                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">Email address *</label>
+                                <div className="space-y-2 border-b border-slate-100 pb-4 focus-within:border-ashbots-blue transition-colors">
+                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">Email address *</label>
                                     <input type="email" name="email" placeholder="email@address.com" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
                                 </div>
-                                <div className="space-y-2 border-b border-slate-100 pb-4">
-                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">What questions do you have? *</label>
+                                <div className="space-y-2 border-b border-slate-100 pb-4 focus-within:border-ashbots-blue transition-colors">
+                                    <label className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">What questions do you have? *</label>
                                     <textarea name="message" rows={4} placeholder="Describe your needs or questions..." className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700 resize-none" required />
                                 </div>
 
                                 <div className="pt-8">
-                                    <Button type="submit" variant="primary" className="w-full px-16">
-                                        Contact Us
+                                    <Button type="submit" variant="primary" className="w-full px-16" disabled={loading}>
+                                        {loading ? 'Sending...' : 'Contact Us'}
                                     </Button>
                                 </div>
                             </form>
