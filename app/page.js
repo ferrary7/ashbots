@@ -21,13 +21,13 @@ export default function Home() {
                             <span className="text-ashbots-blue italic opacity-90">Miss a Lead Again</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl font-light text-slate-500 max-w-2xl leading-loose">
+                        <p className="text-lg md:text-xl font-light text-slate-700 max-w-2xl leading-loose">
                             AshBots, AI Chatbots that work while you don&apos;t.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 pt-4 items-center">
-                            <Button href="/contact" variant="primary">Get Started</Button>
-                            <span className="text-xs font-light text-slate-400 tracking-wide border-l border-slate-100 pl-6 h-10 flex items-center">No contracts. Cancel anytime.</span>
+                            <Button href="/pricing" variant="primary">Get Started</Button>
+                            <span className="text-xs font-light text-slate-600 tracking-wide border-l border-slate-100 pl-6 h-10 flex items-center">No contracts. Cancel anytime.</span>
                         </div>
                     </div>
                 </div>
@@ -82,26 +82,26 @@ export default function Home() {
                     <div className="grid md:grid-cols-2 gap-32 items-start">
                         <div className="space-y-12">
                             <div className="space-y-4">
-                                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-300">Our Expertise</span>
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Our Expertise</span>
                                 <h2 className="text-4xl md:text-6xl font-display text-slate-900 leading-tight">
                                     Reducing <br />
                                     <span className="text-slate-400">Administrative weight.</span>
                                 </h2>
                             </div>
-                            <p className="text-lg font-light text-slate-500 leading-loose">
+                            <p className="text-lg font-light text-slate-700 leading-loose">
                                 AshBots reduces administrative workload by handling common customer inquiries automatically.
                             </p>
-                            <p className="text-sm font-light text-slate-400 leading-relaxed max-w-lg border-l-2 border-ashbots-blue/5 pl-8 italic">
+                            <p className="text-sm font-light text-slate-600 leading-relaxed max-w-lg border-l-2 border-ashbots-blue/5 pl-8 italic">
                                 At AshBots, we build custom AI chatbots that help businesses reply to customers instantly, capture leads, and handle bookings 24/7, so no inquiry is missed and administrative workload is reduced.
                             </p>
                         </div>
 
                         <div className="bg-slate-50/50 backdrop-blur-sm rounded-[4rem] p-16 space-y-8 border border-slate-100/50 shadow-premium group">
-                            <p className="text-sm font-light text-slate-500 leading-loose group-hover:text-slate-600 transition-colors">
+                            <p className="text-sm font-light text-slate-700 leading-loose group-hover:text-slate-800 transition-colors">
                                 Each chatbot is trained specifically on your business, delivering clear and accurate responses without sounding generic or robotic.
                             </p>
                             <div className="h-px w-12 bg-slate-200"></div>
-                            <p className="text-sm font-light text-slate-500 leading-loose group-hover:text-slate-600 transition-colors">
+                            <p className="text-sm font-light text-slate-700 leading-loose group-hover:text-slate-800 transition-colors">
                                 When you work with us, you don&apos;t work with a sales team, you work directly with the developer who builds it, ensuring your assistant is tailored precisely to your business needs.
                             </p>
                         </div>
@@ -128,7 +128,7 @@ export default function Home() {
                             <div key={i} className="p-10 rounded-[3rem] bg-white border border-slate-100 hover:shadow-premium transition-all duration-700 hover:-translate-y-2 relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-grid-pattern opacity-0 group-hover:opacity-[0.03] transition-opacity pointer-events-none"></div>
                                 <h3 className="relative z-10 text-lg font-medium text-slate-800 mb-6 leading-snug">{f.t}</h3>
-                                <p className="relative z-10 text-xs font-light text-slate-400 leading-loose">{f.d}</p>
+                                <p className="relative z-10 text-xs font-light text-slate-600 leading-loose">{f.d}</p>
                             </div>
                         ))}
                     </div>

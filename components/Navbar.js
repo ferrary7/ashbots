@@ -26,7 +26,7 @@ export default function Navbar() {
             }`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center text-slate-800">
                 <Link href="/" className="transition-opacity hover:opacity-80">
-                    <Image src="/logo.png" alt="AshBots" width={120} height={36} className="h-9 w-auto object-contain" />
+                    <Image src="/logo.png" alt="AshBots" width={120} height={36} className="h-9 w-auto object-contain rounded-full shadow-sm" />
                 </Link>
 
                 {/* Desktop */}
@@ -58,7 +58,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full glass shadow-premium animate-fade-in border-t border-slate-100/50">
+                <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-premium animate-fade-in border-t border-slate-100/50">
                     <div className="px-6 py-10 flex flex-col space-y-6 items-center">
                         {navLinks.map((link) => (
                             <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="text-xl font-light text-slate-700">

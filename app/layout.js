@@ -9,6 +9,10 @@ export const metadata = {
     title: 'AshBots - Custom AI Chatbots for Your Business',
     description: 'Build custom AI chatbots that help businesses reply to customers instantly, capture leads, and handle bookings 24/7. Work directly with the developer who builds it.',
     keywords: 'AI chatbot, custom chatbot, business automation, lead capture, customer service, 24/7 support',
+    icons: {
+        icon: '/logo.png',
+        apple: '/logo.png',
+    }
 }
 
 export default function RootLayout({ children }) {
@@ -20,6 +24,32 @@ export default function RootLayout({ children }) {
                     {children}
                 </main>
                 <Footer />
+                <script type="text/javascript" dangerouslySetInnerHTML={{
+                    __html: `
+                        (function(d, t) {
+                            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                            v.onload = function() {
+                                window.voiceflow.chat.load({
+                                    verify: { projectID: '697af52a0cc5c60e8cfa1911' },
+                                    url: 'https://general-runtime.voiceflow.com',
+                                    versionID: 'production',
+                                    assistant: {
+                                        title: "AshBot Assistant",
+                                        description: "How can I help you today?",
+                                        image: "https://ashbots.com/logo.png", // Assuming path
+                                        color: "#3b82f6",
+                                    },
+                                    launcher: {
+                                        bottom: "20px",
+                                        right: "20px",
+                                    }
+                                });
+                            }
+                            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript";
+                            s.parentNode.insertBefore(v, s);
+                        })(document, 'script');
+                    `
+                }} />
             </body>
         </html>
     )

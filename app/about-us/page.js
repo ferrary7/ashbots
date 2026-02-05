@@ -17,9 +17,9 @@ export default function AboutUs() {
                             <span className="text-ashbots-blue italic opacity-90">of AshBots</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl font-light text-slate-500 max-w-2xl leading-relaxed">
+                        <p className="text-lg md:text-xl font-light text-slate-700 max-w-2xl leading-relaxed">
                             Hi, I&apos;m Ayman. <br />
-                            <span className="text-slate-400 text-base md:text-lg">My name is Ayman Ashraf. I am an Electrical Engineering student and the founder of AshBots.</span>
+                            <span className="text-slate-600 text-base md:text-lg">My name is Ayman Ashraf. I am an Electrical Engineering student and the founder of AshBots.</span>
                         </p>
                     </div>
                 </div>
@@ -32,16 +32,16 @@ export default function AboutUs() {
                     <div className="grid md:grid-cols-2 gap-32 items-start">
                         <div className="space-y-24">
                             <div className="space-y-8">
-                                <h2 className="text-4xl md:text-6xl font-display text-slate-900 leading-tight">Why I started <br /><span className="text-slate-400">AshBots</span></h2>
-                                <p className="text-lg font-light text-slate-500 leading-loose border-l-2 border-ashbots-blue/5 pl-10 italic">
+                                <h2 className="text-4xl md:text-6xl font-display text-slate-900 leading-tight">Why I started <br /><span className="text-slate-500">AshBots</span></h2>
+                                <p className="text-lg font-light text-slate-700 leading-loose border-l-2 border-ashbots-blue/5 pl-10 italic">
                                     I started AshBots out of pure curiosity. I&apos;ve always been drawn to building technology that feels smart, useful, and genuinely impressive.
                                     I did not set out to build a chatbot company. I stumbled into the concept, noticed how lifeless most business websites feel, and decided to fix it.
                                 </p>
                             </div>
 
                             <div className="space-y-8">
-                                <h2 className="text-4xl md:text-6xl font-display text-slate-900 leading-tight">The problem <br /><span className="text-slate-400">I saw</span></h2>
-                                <p className="text-lg font-light text-slate-500 leading-loose border-l-2 border-ashbots-blue/5 pl-10 italic">
+                                <h2 className="text-4xl md:text-6xl font-display text-slate-900 leading-tight">The problem <br /><span className="text-slate-500">I saw</span></h2>
+                                <p className="text-lg font-light text-slate-700 leading-loose border-l-2 border-ashbots-blue/5 pl-10 italic">
                                     Many company websites sound robotic, scripted, and fake. Even with modern AI, most solutions still lack personality and context.
                                     I wanted to create something different. A virtual assistant that sounds human, understands nuance, and is trained entirely around one thing: the business it represents.
                                 </p>
@@ -57,16 +57,16 @@ export default function AboutUs() {
                                     </p>
                                 </div>
                                 <div className="h-px w-12 bg-slate-200"></div>
-                                <p className="text-sm font-light text-slate-500 leading-loose group-hover:text-slate-600 transition-colors">
+                                <p className="text-sm font-light text-slate-700 leading-loose group-hover:text-slate-800 transition-colors">
                                     What began as a personal project quickly became an opportunity to help small and growing businesses automate customer interactions, bookings, and support without expensive enterprise software.
                                 </p>
                             </div>
 
                             <div className="p-12 border-l border-slate-100 space-y-8">
                                 <h2 className="text-3xl font-display text-slate-900 italic">It&apos;s personal.</h2>
-                                <p className="text-sm font-light text-slate-500 leading-relaxed max-w-md">
+                                <p className="text-sm font-light text-slate-700 leading-relaxed max-w-md">
                                     AshBots is not a generic tool I resell. It is something I design, customize, and stand behind personally.
-                                    When you work with AshBots, you work directly with the engineer who built it.
+                                    When you work with AshBots, you work directly with the developer who built it.
                                 </p>
                             </div>
                         </div>
@@ -82,7 +82,7 @@ export default function AboutUs() {
                         Let&apos;s build <br /> <span className="text-ashbots-blue italic opacity-90">your voice.</span>
                     </h2>
                     <div className="pt-12">
-                        <Button href="/contact" variant="primary">Work with Ayman</Button>
+                        <Button href="/contact" variant="primary">Work with AshBots</Button>
                     </div>
                 </div>
             </section>

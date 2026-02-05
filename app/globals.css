@@ -88,3 +88,31 @@ h4 {
     background: rgba(59, 130, 246, 0.1);
     color: #2563eb;
 }
+
+/* Voiceflow Chat Widget Mobile Refinements */
+@media (max-width: 768px) {
+    .vfrc-widget--launcher {
+        bottom: 16px !important;
+        right: 16px !important;
+        transform: scale(0.85);
+    }
+
+    .vfrc-assistant-info {
+        padding: 12px !important;
+    }
+
+    .vfrc-chat {
+        bottom: 80px !important;
+        right: 10px !important;
+        left: 10px !important;
+        width: auto !important;
+        height: calc(100% - 120px) !important;
+        max-height: 600px !important;
+        border-radius: 20px !important;
+    }
+}
+
+.vfrc-launcher {
+    background-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4) !important;
+}
