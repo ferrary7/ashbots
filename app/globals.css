@@ -112,7 +112,36 @@ h4 {
     }
 }
 
+/* Voiceflow Chat Widget - Deep Sync with Slate 900 */
+/* Target the main container and its internal variables revealed in inspector */
+.vfrc-chat,
+[class*="vfrc-chat"] {
+    --_1bof89n5: #0f172a !important;
+    /* Primary blue override */
+    --_1bof89n6: #1e293b !important;
+    /* Dark variant */
+}
+
+/* Force colors on specific elements shown in screenshot */
+.vfrc-launcher,
+.vfrc-widget--launcher,
+.vfrc-header,
+[class*="vfrc-header"],
+[class*="dayjq"] {
+    background-color: #0f172a !important;
+}
+
 .vfrc-launcher {
-    background-color: #3b82f6 !important;
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4) !important;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.4) !important;
+}
+
+.vfrc-header--title,
+[class*="vfrc-header--title"] {
+    color: #ffffff !important;
+}
+
+/* Accent color for buttons/links inside chat */
+.vfrc-button--primary,
+[class*="vfrc-button--primary"] {
+    background-color: #0f172a !important;
 }

@@ -30,18 +30,11 @@ export default function RootLayout({ children }) {
                             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
                             v.onload = function() {
                                 window.voiceflow.chat.load({
-                                    verify: { projectID: '697af52a0cc5c60e8cfa1911' },
+                                    verify: { projectID: '698438a4d0bdb5fd8f94f4a6' },
                                     url: 'https://general-runtime.voiceflow.com',
                                     versionID: 'production',
-                                    assistant: {
-                                        title: "AshBot Assistant",
-                                        description: "How can I help you today?",
-                                        image: "https://ashbots.com/logo.png", // Assuming path
-                                        color: "#3b82f6",
-                                    },
-                                    launcher: {
-                                        bottom: "20px",
-                                        right: "20px",
+                                    voice: {
+                                        url: "https://runtime-api.voiceflow.com"
                                     }
                                 });
                             }
