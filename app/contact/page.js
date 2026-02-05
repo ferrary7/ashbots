@@ -8,6 +8,16 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const formData = new FormData(e.target)
+        const name = formData.get('name')
+        const email = formData.get('email')
+        const message = formData.get('message')
+
+        const subject = encodeURIComponent(`AshBots Inquiry from ${name}`)
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+
+        window.location.href = `mailto:ayman@ashbots.com?subject=${subject}&body=${body}`
+
         setSubmitted(true)
     }
 
@@ -70,15 +80,15 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="space-y-12">
                                 <div className="space-y-2 border-b border-slate-100 pb-4">
                                     <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">Your Name *</label>
-                                    <input type="text" placeholder="Full name" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
+                                    <input type="text" name="name" placeholder="Full name" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
                                 </div>
                                 <div className="space-y-2 border-b border-slate-100 pb-4">
                                     <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">Email address *</label>
-                                    <input type="email" placeholder="email@address.com" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
+                                    <input type="email" name="email" placeholder="email@address.com" className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700" required />
                                 </div>
                                 <div className="space-y-2 border-b border-slate-100 pb-4">
                                     <label className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold">What questions do you have? *</label>
-                                    <textarea rows={4} placeholder="Describe your needs or questions..." className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700 resize-none" required />
+                                    <textarea name="message" rows={4} placeholder="Describe your needs or questions..." className="w-full bg-transparent text-sm font-light focus:outline-none text-slate-700 resize-none" required />
                                 </div>
 
                                 <div className="pt-8">
