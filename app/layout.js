@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
                             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
                             v.onload = function() {
                                 window.voiceflow.chat.load({
-                                    verify: { projectID: '698438a4d0bdb5fd8f94f4a6' },
+                                    verify: { projectID: '698f8d1254e544991a8e2fdc' },
                                     url: 'https://general-runtime.voiceflow.com',
                                     versionID: 'production',
                                     voice: {
