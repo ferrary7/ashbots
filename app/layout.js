@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
                             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
                             v.onload = function() {
                                 window.voiceflow.chat.load({
-                                    verify: { projectID: '698f8d1254e544991a8e2fdc' },
+                                    verify: { projectID: '69a7f3f67e59042952d78a75' },
                                     url: 'https://general-runtime.voiceflow.com',
                                     versionID: 'production',
                                     voice: {
@@ -38,8 +38,7 @@ export default function RootLayout({ children }) {
                                     }
                                 });
                             }
-                            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript";
-                            s.parentNode.insertBefore(v, s);
+                            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
                         })(document, 'script');
                     `
                 }} />
